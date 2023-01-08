@@ -1,4 +1,5 @@
 import React from "react";
+import PostContent from "../../components/posts/post-details/post-content";
 
 const singlePostPage = () => {
     // const DUMMY_POSTS = [
@@ -24,7 +25,11 @@ const singlePostPage = () => {
     //         date: "2020-20-12",
     //     },
     // ];
-    return <div></div>;
+    return (
+        <div>
+            <PostContent />
+        </div>
+    );
 };
 
 export default singlePostPage;

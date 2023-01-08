@@ -3,9 +3,9 @@ import classes from "./post-content.module.css";
 
 const PostContent = () => {
     return (
-        <article>
+        <article className={classes.content}>
             <PostHeader title="" image="" />
-            CONTENT
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, similique.</p>
         </article>
     );
 };
