@@ -4,19 +4,23 @@ import Image from "next/image";
 import classes from "./single-post.module.css";
 
 const SinglePost = (props) => {
+    const { title, slug, date, image, excerpt } = props.post;
+
+    const linkPath = `/posts/${slug}`;
+
     return (
         <li className={classes.post}>
-            <Link>
-                <a>
-                    <div className={classes.image}>
-                        <Image src="" alt="ZEUS" width={300} height={200} />
-                    </div>
-                    <div className={classes.content}>
-                        <h3>ZEUS</h3>
-                        <time>13 march 2020 </time>
-                        <p>The excerpt</p>
-                    </div>
-                </a>
+            <Link href={linkPath}>
+                {/* <a> */}
+                <div className={classes.image}>
+                    <Image src={image} alt="ZEUS" width={450} height={100} layout="responsive" />
+                </div>
+                <div className={classes.content}>
+                    <h3>{title}</h3>
+                    <time>{date}</time>
+                    <p>{excerpt}</p>
+                </div>
+                {/* </a> */}
             </Link>
         </li>
     );
