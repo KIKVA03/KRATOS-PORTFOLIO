@@ -1,9 +1,27 @@
 import styled from "styled-components";
-import { Fragment } from "react";
+import { Fragment, useState, useEffect, useMemo } from "react";
 import Hero from "../components/home-page/hero";
 import FeturedPosts from "../components/home-page/fetured-posts";
 
 const HomePage = () => {
+    const [gods, setGods] = useState([]);
+
+    useEffect(() => {
+        fetch("https://kratos-killed-gods-default-rtdb.firebaseio.com/gods.json")
+            .then((response) => response.json())
+
+            .then((data) => {
+                const arr = [];
+
+                for (const key in data) {
+                    arr.push(data[key]);
+                }
+                setGods(arr);
+            });
+    }, []);
+
+    // console.log(gods);
+
     const DUMMY_POSTS = [
         {
             slug: "killed-ZEUS-bareHanded1",
@@ -30,7 +48,7 @@ const HomePage = () => {
     return (
         <Fragment>
             <Hero />
-            <FeturedPosts posts={DUMMY_POSTS} />
+            <FeturedPosts posts={gods} />
         </Fragment>
     );
 };

@@ -4,7 +4,7 @@ const PostGrid = ({ posts }) => {
     return (
         <ul className={classes.grid}>
             {posts.map((post) => (
-                <SinglePost key={post.slug} post={post} />
+                <SinglePost key={post.title} post={post} />
             ))}
         </ul>
     );
