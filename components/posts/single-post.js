@@ -4,9 +4,9 @@ import Image from "next/image";
 import classes from "./single-post.module.css";
 
 const SinglePost = (props) => {
-    const { title, slug, date, image, excerpt } = props.post;
+    const { title, date, image, excerpt } = props.post;
 
-    const linkPath = `/posts/${slug}`;
+    const linkPath = `/posts/${title}`;
 
     return (
         <li className={classes.post}>

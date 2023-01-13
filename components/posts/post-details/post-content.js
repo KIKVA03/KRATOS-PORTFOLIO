@@ -1,11 +1,11 @@
 import PostHeader from "./post-header";
 import classes from "./post-content.module.css";
 
-const PostContent = () => {
+const PostContent = ({ content }) => {
     return (
         <article className={classes.content}>
-            <PostHeader title="" image="" />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, similique.</p>
+            <PostHeader title={content.title} image={content.image} />
+            <p>{content.excerpt}</p>
         </article>
     );
 };
